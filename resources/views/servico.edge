@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Sobrancelhas</title>
+    <link href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700'>
+    {{ style('style')}}
+    {{ style('normalize')}}
+</head>
+    <body>
+        <header class="top_header clearfix">
+            <nav class="sair">
+                <ul>
+                    <li><a href="/logout">Sair</a></li>
+                </ul>
+            </nav>
+            <div class="maxwidth">
+                <img src="assets/images/diba.jpg" alt="logotipo Diba Barbeiros" class="top_header_logo_paginas">
+            </div>
+        </header>
+        <div class="box">
+            <section>
+                <nav class="top_nav_paginas">
+                    <ul>
+                        <li><a href="/barbeiros">Barbeiros</a></li>
+                    </ul>
+                </nav>
+            </section>
+
+            <section>
+                <form action="/servico" method="POST" class="form_barbeiro">
+                    <div>
+                        {{ csrfField() }}
+                        <label for="tipo_servico">Tipo de Serviço</label>
+                        <input type="text" id="tipo_servico" name="tipo_servico">
+                        <br>
+                        <label for="nome_servico">Nome do serviço</label>
+                        <input type="text" id="nome_servico" name="nome_servico">
+                        <br>
+                        <label for="preco">Preço do serviço</label>
+                        <input type="double"  id="preco_servico" name="preco_servico">
+                    </div>
+                    <div>
+                        <button class = "button" type="submit">Adicionar</button>
+                    </div>
+                </form>
+            </section>
+            <section>
+                <h1 class="tabela">Lista de Serviços</h1>
+                    @each(servico in servico)
+                    <div class="tabela">
+                        <div>ID: 
+                        {{ (servico.id -1) }}
+                        </div>
+                        <div>Tipo de serviço: 
+                        {{ servico.tipo_servico}}
+                        </div>
+                        <div>Nome do serviço: 
+                            {{ servico.nome_servico}}
+                        </div>
+                        <div>Preço:
+                        {{ servico.preco_servico }}
+                        </div>
+                        <button class="button">
+                        <a href="/edita-servico/{{servico.id}}" method = "GET" class="button btn-primary">Editar</a>
+                        </button>
+                        <button class="button">
+                        <a href="/delete-servico/{{servico.id}}" method = "GET" class="button btn-danger">Deletar</a>
+                        </button>    
+        @else
+            <h1 class="tabela">Nenhuma serviço foi criado ainda!</h1>
+        @endeach
+            </section>
+        </div>
+        <footer class="footer">
+            <ul class="footer_menushare">
+                <li><a href="facebool.com/Diba-Barbeiros-10273864139748"
+                    class="icon-facebook">
+                <span class="hidden">
+                    <img src="facebook.png"/>    
+                </span>
+                </a></li>
+            </ul>
+            <p>Copyright @Joorgenho - 35.988.777/0001-33 - 2021 - Todos os direitos reservados</p>
+        </footer>
+    </body>
+</html>
