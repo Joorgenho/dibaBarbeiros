@@ -24,7 +24,7 @@ class LoginController {
     async adicionaUsuario({ request, response }){
         const data = request.only(["email", "nome", "senha"])
         const user = await Usuario.create(data)
-        return response.redirect('/')
+        return response.redirect('/dibaBarbeiros')
     }
     
     async autenticar ( {request, response, session} ) { 
