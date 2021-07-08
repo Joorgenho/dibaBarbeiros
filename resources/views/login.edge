@@ -1,121 +1,54 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!DOCTYPE html>
-<html>
-    
-<head>
-	<title>Login</title>
-	{{ style('style-login')}}
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-</head>
-
-<body>
-	<div class="container h-100">
-		<nav class="top_nav">
-			<ul>
-				<li><a href="/cadastro">Criar Cadastro</a></li>
-			</ul>
-		</nav>
-		<div class="d-flex justify-content-center h-100">
-			<div class="user_card">
-				<div class="d-flex justify-content-center">
-					<div class="brand_logo_container">
-						<img src="assets/images/diba.jpg" alt="logotipo Diba Barbeiros" class="brand_logo">
-					</div> 
-				</div>
-				<div class="d-flex justify-content-center form_container">
-					<form action="/auth" method="POST">
-						{{ csrfField() }}
-						<div class="input-group mb-3">
-							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-user"></i></span>
-							</div>
-							<input type="text" name="email" id="email" class="form-control input_user" value="" placeholder="e-mail" autofocus>
-						</div>
-						<div class="input-group mb-2">
-							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-key"></i></span>
-							</div>
-							<input type="password" name="senha" id="senha" class="form-control input_pass" value="" placeholder="senha" autofocus>
-						</div>
-						<div class="form-group">
-							<div class="custom-control custom-checkbox">
-								<input type="checkbox" class="custom-control-input" id="customControlInline">
-								<label class="custom-control-label" for="customControlInline">Lembrar-se</label>
-							</div>
-						</div>
-							<div class="d-flex justify-content-center mt-3 login_container">
-			    	<button type="submit" name="button" class="btn login_btn">Entrar</button>
-					</div>
-					@if(old('notification'))
-                    <p style = 'color: black font-weight: bold'>
-                    {{ old('notification') }}
-                    </p>
-                	@endif
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-</body>
-</html>
-
-
-
-
-
-<!-- <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1ab94d0eba.js" crossorigin="anonymous"></script>
     <title>Login</title>
-    {{ style('style')}}
-    {{ style('normalize')}}
+    <link rel="stylesheet" href="style.css">
+	{{ style('style-login')}}
+    {{ style('stylesindex')}}
 </head>
-    <body>
-        <header class="top_header clearfix">
-            <div class="maxwidth">
-                <img src="assets/images/diba.jpg" alt="logotipo Diba Barbeiros" class="top_header_logo" >
-                <nav class="top_nav">
-                    <ul>
-                        <li><a href="/cadastro">Criar Cadastro</a></li>
-                    </ul>
-                </nav>
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#page-top">Diba Barbeiros</a>
+            <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/portfolio">Serviços</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/about">Sobre nós</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/contact">Contatos</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/cadastro">Novo Cadastro</a></li>
+                </ul>
             </div>
-        </header>
-
-        <form action="/auth" method="POST" class="formlogin">
+        </div>
+    </nav>
+    <main class="container">
+        <h2>Login</h2>
+        <form action="/auth" method="POST">
             {{ csrfField() }}
-            <fieldset>
-                <legend>Login</legend>
-                <label for="user">Digite seu email:</label>
-                <input type="text" id="email" name="email" autofocus>
-                <label for="pass">Digite sua senha:</label>
-                <input type="password" id="senha" name="senha" autofocus>
-                <input type="submit" value="Logar" class="btn">
-                @if(old('notification'))
-                    <p style = 'color: black font-weight: bold'>
-                    {{ old('notification') }}
-                    </p>
-                @endif
-            </fieldset>
+            <div class="input-field">
+                <input type="text" name="email" id="email"
+                    placeholder="Digite seu email">
+                <div class="underline"></div>
+            </div>
+            <div class="input-field">
+                <input type="password" name="senha" id="senha"
+                    placeholder="Digite sua senha">
+                <div class="underline"></div>
+            </div>
+            <input type="submit" value="Entrar">
+            @if(old('notification'))
+            <p style = 'color: black font-weight: bold'>
+            {{ old('notification') }}
+            </p>
+            @endif
         </form>
-        <footer class="footer">
-            <ul class="footer_menushare">
-                <li><a href="facebool.com/Diba-Barbeiros-10273864139748"
-                    class="icon-facebook">
-                <span class="hidden">
-                    <img src="assets/images/facebook.png"/>    
-                </span>
-                </a></li>
-            </ul>
-            <p>Copyright @Joorgenho - 35.988.777/0001-33 - 2021 - Todos os direitos reservados</p>
-        </footer>
-    </body>
+    </main>
+</body>
 </html>
