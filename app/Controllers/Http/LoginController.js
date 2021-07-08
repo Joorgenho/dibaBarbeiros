@@ -45,19 +45,8 @@ class LoginController {
         if(email){
             return view.render("admin", {email:email})
         } else {
-            return response.redirect('/')
+            return response.redirect('/dibaBarbeiros')
         }
-    }
-
-    async bemVindo ({ view, response, session }) { 
-        return view.render('/bemvindo')
-        
-        /*const email = session.get("email")
-        if(email){
-            return view.render("bemvindo", {email:email})
-        } else {
-            return response.redirect('/')
-        }*/
     }
 
     //barbeiros
@@ -70,8 +59,15 @@ class LoginController {
     async adicionaBarbeiros({ request, session, response }){
         const barbeiros = await Barbeiros.create({
             nome_barbeiro: request.input('nome_barbeiro'),
+            cpf_barbeiro: request.input('cpf_barbeiro'),
             data_aniversario: request.input('data_aniversario'),
-            endereco_barbeiro: request.input('endereco_barbeiro'),
+            telefone_barbeiro: request.input('telefone_barbeiro'),
+            cep_barbeiro: request.input('cep_barbeiro'),
+            rua_barbeiro: request.input('rua_barbeiro'),
+            numeroCasa_barbeiro: request.input('numeroCasa_barbeiro'),
+            bairro_barbeiro: request.input('bairro_barbeiro'),
+            cidade_barbeiro: request.input('cidade_barbeiro'),
+            estado_barbeiro: request.input('estado_barbeiro'),
             especialidade_barbeiro: request.input('especialidade_barbeiro')
         })
             session.flash({ 'successmessage': 'Barbeiro adicionado'})

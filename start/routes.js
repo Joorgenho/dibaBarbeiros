@@ -10,7 +10,6 @@ Route.post('/cadastro', 'LoginController.adicionaUsuario')
 Route.post('/auth', 'LoginController.autenticar')
 Route.get('/admin', 'LoginController.admin')
 Route.get('/logout','LoginController.logout')
-Route.get('/bemvindo', 'LoginController.bemVindo')
 
 Route.get('/barbeiros', 'LoginController.barbeiros')
 Route.post('barbeiros', 'LoginController.adicionaBarbeiros')
