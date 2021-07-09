@@ -1,53 +1,98 @@
-<!doctype html>
-<html lang="pt-br">
-<head>
-    <meta charset="utf-8">
-    <title>Sobrancelhas</title>
-    <link href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700'>
-    {{ style('style')}}
-    {{ style('normalize')}}
-</head>
-    <body>
-        <header class="top_header clearfix">
-            <nav class="sair">
-                <ul>
-                    <li><a href="/logout">Sair</a></li>
-                </ul>
-            </nav>
-            <div class="maxwidth">
-                <img src="assets/images/diba.jpg" alt="logotipo Diba Barbeiros" class="top_header_logo_paginas">
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Diba Barbeiros</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        {{ style('stylesindex')}}
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="#page-top">Diba Barbeiros</a>
+                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/barbeiros">Barbeiros</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/sair">Serviços</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/DibaBarbeiros">Sair</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead bg-primary text-white text-center">
+            <div class="container d-flex align-items-center flex-column">
+                <!-- Masthead Avatar Image-->
+                <img class="masthead-avatar mb-5" src="assets/images/diba.jpg" alt="Diba Barbeiros" />
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Masthead Subheading-->
+                <p class="masthead-subheading font-weight-light mb-0">Cortes- Barba - Sobrancelhas</p>
             </div>
         </header>
-        <div class="box">
-            <section>
-                <nav class="top_nav_paginas">
-                    <ul>
-                        <li><a href="/barbeiros">Barbeiros</a></li>
-                    </ul>
-                </nav>
-            </section>
+        <!-- About Section-->
+        <section class="page-section bg-primary text-white mb-0" id="about">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Cadastro de Serviços</div>
+            </div>
+            <form action="/servico" method="POST" class="form-horizontal">
+                {{ csrfField() }}
+                <fieldset>
+    
+                <div class="form-group">
+                    <div class="col-md-11 control-label">
+                        <p class="help-block"><h11>*</h11> Campo Obrigatório </p>
+                    </div>
+                </div>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-2 control-label" for="tipo_servico">Tipo de serviço <h11>*</h11></label>  
+                  <div class="col-md-8">
+                  <input id="tipo_servico" name="tipo_servico" placeholder="" class="form-control input-md" required="" type="text">
+                  </div>
+                </div>
 
-            <section>
-                <form action="/servico" method="POST" class="form_barbeiro">
-                    <div>
-                        {{ csrfField() }}
-                        <label for="tipo_servico">Tipo de Serviço</label>
-                        <input type="text" id="tipo_servico" name="tipo_servico">
-                        <br>
-                        <label for="nome_servico">Nome do serviço</label>
-                        <input type="text" id="nome_servico" name="nome_servico">
-                        <br>
-                        <label for="preco">Preço do serviço</label>
-                        <input type="double"  id="preco_servico" name="preco_servico">
+                <div class="form-group">
+                    <label class="col-md-2 control-label" for="nome_servico">Nome do serviço <h11>*</h11></label>  
+                    <div class="col-md-8">
+                    <input id="nome_servico" name="nome_servico" placeholder="" class="form-control input-md" required="" type="text">
                     </div>
-                    <div>
-                        <button class = "button" type="submit">Adicionar</button>
+                  </div>  
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label" for="preco_servico">Preço do serviço <h11>*</h11></label>  
+                    <div class="col-md-2">
+                    <input id="preco_servico" name="preco_servico" placeholder="" class="form-control input-md" required="" type="text" maxlength="11">
                     </div>
-                </form>
-            </section>
-            <section>
-                <h1 class="tabela">Lista de Serviços</h1>
-                    @each(servico in servico)
+  <div class="form-group">
+    <label class="col-md-2 control-label" for="Cadastrar"></label>
+    <div class="col-md-8">
+      <button id="Cadastrar" name="Cadastrar" class="btn btn-primary" type="Submit">Cadastrar</button>
+    </div>
+  </div>
+        </section>
+    </form>
+    <section>
+        @each(servico in servico)
                     <div class="tabela">
                         <div>ID: 
                         {{ (servico.id -1) }}
@@ -62,26 +107,200 @@
                         {{ servico.preco_servico }}
                         </div>
                         <button class="button">
-                        <a href="/edita-servico/{{servico.id}}" method = "GET" class="button btn-primary">Editar</a>
+                        <a href="/edita-servico/{{servico.id}}" method = "GET" class="btn btn-primary">Editar</a>
                         </button>
                         <button class="button">
-                        <a href="/delete-servico/{{servico.id}}" method = "GET" class="button btn-danger">Deletar</a>
+                        <a href="/delete-servico/{{servico.id}}" method = "GET" class="btn btn-primary">Deletar</a>
                         </button>    
         @else
-            <h1 class="tabela">Nenhuma serviço foi criado ainda!</h1>
+            <h1 class="tabela">Nenhum serviço foi criado ainda!</h1>
         @endeach
             </section>
         </div>
-        <footer class="footer">
-            <ul class="footer_menushare">
-                <li><a href="facebool.com/Diba-Barbeiros-10273864139748"
-                    class="icon-facebook">
-                <span class="hidden">
-                    <img src="facebook.png"/>    
-                </span>
-                </a></li>
-            </ul>
-            <p>Copyright @Joorgenho - 35.988.777/0001-33 - 2021 - Todos os direitos reservados</p>
+
+
+        <!-- Footer-->
+        <footer class="footer text-center">
+            <div class="container">
+                <div class="row">
+                    <!-- Footer Location-->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">Localização</h4>
+                        <p class="lead mb-0">
+                            Rua Reverendo Daniel Betts, 8652
+                            Morro Santana - Porto Alegre RS
+                            <br />
+                        </p>
+                    </div>
+                    <!-- Footer Social Icons-->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">Redes Sociais</h4>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
         </footer>
+        <!-- Copyright Section-->
+        <div class="copyright py-4 text-center text-white">
+            <div class="container"><small>Copyright &copy; Diba Barbeiros 2021</small></div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/scripts.js"></script>
+
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+        <script>
+
+            
+window.addEventListener('DOMContentLoaded', event => {
+
+// Navbar shrink function
+var navbarShrink = function () {
+    const navbarCollapsible = document.body.querySelector('#mainNav');
+    if (!navbarCollapsible) {
+        return;
+    }
+    if (window.scrollY === 0) {
+        navbarCollapsible.classList.remove('navbar-shrink')
+    } else {
+        navbarCollapsible.classList.add('navbar-shrink')
+    }
+
+};
+
+// Shrink the navbar 
+navbarShrink();
+
+// Shrink the navbar when page is scrolled
+document.addEventListener('scroll', navbarShrink);
+
+// Activate Bootstrap scrollspy on the main nav element
+const mainNav = document.body.querySelector('#mainNav');
+if (mainNav) {
+    new bootstrap.ScrollSpy(document.body, {
+        target: '#mainNav',
+        offset: 72,
+    });
+};
+
+// Collapse responsive navbar when toggler is visible
+const navbarToggler = document.body.querySelector('.navbar-toggler');
+const responsiveNavItems = [].slice.call(
+    document.querySelectorAll('#navbarResponsive .nav-link')
+);
+responsiveNavItems.map(function (responsiveNavItem) {
+    responsiveNavItem.addEventListener('click', () => {
+        if (window.getComputedStyle(navbarToggler).display !== 'none') {
+            navbarToggler.click();
+        }
+    });
+});
+
+});
+
+    
+            function limpa_formulario_cep() {
+                //Limpa valores do formulário de cep.
+                document.getElementById('rua_barbeiro').value=("");
+                document.getElementById('bairro_barbeiro').value=("");
+                document.getElementById('cidade_barbeiro').value=("");
+                document.getElementById('estado_barbeiro').value=("");
+                
+        }
+        
+        function meu_callback(conteudo) {
+            if (!("erro" in conteudo)) {
+                //Atualiza os campos com os valores.
+                document.getElementById('rua_barbeiro').value=(conteudo.logradouro);
+                document.getElementById('bairro_barbeiro').value=(conteudo.bairro);
+                document.getElementById('cidade_barbeiro').value=(conteudo.localidade);
+                document.getElementById('estado_barbeiro').value=(conteudo.uf);
+            } //end if.
+            else {
+                //CEP não Encontrado.
+                limpa_formulario_cep();
+                alert("CEP não encontrado.");
+                document.getElementById('cep_barbeiro').value=("");
+            }
+        }
+            
+        function pesquisacep(valor) {
+        
+            //Nova variável "cep" somente com dígitos.
+            var cep = valor.replace(/\D/g, '');
+        
+            //Verifica se campo cep possui valor informado.
+            if (cep !== "") {
+        
+                //Expressão regular para validar o CEP.
+                var validacep = /^[0-9]{8}$/;
+        
+                //Valida o formato do CEP.
+                if(validacep.test(cep)) {
+        
+                    //Preenche os campos com "..." enquanto consulta webservice.
+                    document.getElementById('rua_barbeiro').value="...";
+                    document.getElementById('bairro_barbeiro').value="...";
+                    document.getElementById('cidade_barbeiro').value="...";
+                    document.getElementById('estado_barbeiro').value="...";
+        
+                    //Cria um elemento javascript.
+                    var script = document.createElement('script');
+        
+                    //Sincroniza com o callback.
+                    script.src = '//viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
+        
+                    //Insere script no documento e carrega o conteúdo.
+                    document.body.appendChild(script);
+        
+                } //end if.
+                else {
+                    //cep é inválido.
+                    limpa_formulario_cep();
+                    alert("Formato de CEP inválido.");
+                }
+            } //end if.
+            else {
+                //cep sem valor, limpa formulário.
+                limpa_formulario_cep();
+            }
+        }
+        
+        function formatar(mascara, documento){
+        var i = documento.value.length;
+        var saida = mascara.substring(0,1);
+        var texto = mascara.substring(i);
+        
+        if (texto.substring(0,1) != saida){
+                documento.value += texto.substring(0,1);
+        }
+        
+        }
+        
+        function idade (){
+        var data=document.getElementById("data_aniversario").value;
+        var dia=data.substr(0, 2);
+        var mes=data.substr(3, 2);
+        var ano=data.substr(6, 4);
+        var d = new Date();
+        var ano_atual = d.getFullYear(),
+            mes_atual = d.getMonth() + 1,
+            dia_atual = d.getDate();
+            
+            ano=+ano,
+            mes=+mes,
+            dia=+dia;
+            
+        var idade=ano_atual-ano;
+        
+        if (mes_atual < mes || mes_atual == mes_aniversario && dia_atual < dia) {
+            idade--;
+        }
+        return idade;
+        } 
+        </script>
     </body>
 </html>

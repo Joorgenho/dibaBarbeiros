@@ -1,74 +1,174 @@
-<!doctype html>
-<html lang="pt-br">
-<head>
-    <meta charset="utf-8">
-    <title>Edição de Serviço</title>
-    <link href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700' 
-    rel='stylesheet' type='text/css'>
-    {{ style('style')}}
-    {{ style('normalize')}}
-</head>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Diba Barbeiros</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        {{ style('stylesindex')}}
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="#page-top">Diba Barbeiros</a>
+                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/barbeiros">Barbeiros</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/sair">Serviços</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/DibaBarbeiros">Sair</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead bg-primary text-white text-center">
+            <div class="container d-flex align-items-center flex-column">
+                <!-- Masthead Avatar Image-->
+                <img class="masthead-avatar mb-5" src="assets/images/diba.jpg" alt="Diba Barbeiros" />
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Masthead Subheading-->
+                <p class="masthead-subheading font-weight-light mb-0">Cortes- Barba - Sobrancelhas</p>
+            </div>
+        </header>
+        <form method="GET" action="servico-edite/{{servico.id}} class="form-horizontal">
+            {{ csrfField() }}
+            <fieldset>
 
-    <body>
-        <header class="top_header clearfix">
-            <nav class="sair">
-                <ul>
-                    <li><a href="/logout">Sair</a></li>
-                </ul>
-            </nav>
-            <div class="maxwidth">
-                <img src="assets/images/diba.jpg" alt="logotipo Diba Barbeiros" class="top_header_logo_paginas">
+            <div class="form-group">
+                <div class="col-md-11 control-label">
+                    <p class="help-block"><h11>*</h11> Campo Obrigatório </p>
+                </div>
             </div>
             
-        </header>
-        <div class="box">
-            <table class="table is-bordered is-striped is-narrow is-fullwidth">
-                <h1 class="title">Lista de Serviço</h1>
-                <thead>
-                <tr>
-                    <th style="width: 80px;">Id</th>
-                    <th>Tipo de Serviço</th>
-                    <th>Nome do Serviço</th>
-                    <th style="width: 120px;">Preço</th>
-                </tr>
-                </thead>
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-2 control-label" for="tipo_servico">Tipo de serviço <h11>*</h11></label>  
+              <div class="col-md-8">
+              <input id="tipo_servico" name="tipo_servico" placeholder="" class="form-control input-md" required="" type="text">
+              </div>
+            </div>
 
-        <section>
-            <nav class="top_nav_paginas">
-                <ul>
-                    <li><a href="/barbeiros">Barbeiros</a></li>
-                    <li><a href="/serviço">Serviços</a></li>
-                </ul>
-            </nav>
-        </section>
-                <form method="GET" action="servico-edite/{{servico.id}}">
-                {{ csrfField() }}
-                <label for="tipo_servico">Tipo de serviço:</label>
-                <input type="text" id="tipo_servico" name="tipo_servico">
-                <br>
-                <label for="nome_servico">Nome de serviço:</label>
-                <input type="text" id="nome_servico" name="nome_servico">
-                <br>
-                <label for="preco_servico">Preço:</label>
-                <input type="double" id="preco_servico" name="preco_servico">
-                    <button type="submit" class="button is-danger is-outlined">
-                        <span class="icon is-small">
-                            <i class="fa fa-times" aria-hidden="true"></i>
-                        </span>
-                        <span>Editar</span>
-                    </button>
-                </form>
-            </td>
-        <footer class="footer">
-            <ul class="footer_menushare">
-                <li><a href="facebool.com/Diba-Barbeiros-10273864139748"
-                    class="icon-facebook">
-                <span class="hidden">
-                    <img src="facebook.png"/>    
-                </span>
-                </a></li>
-            </ul>
-            <p>Copyright @Joorgenho - 35.988.777/0001-33 - 2021 - Todos os direitos reservados</p>
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="nome_servico">Nome do serviço <h11>*</h11></label>  
+                <div class="col-md-8">
+                <input id="nome_servico" name="nome_servico" placeholder="" class="form-control input-md" required="" type="text">
+                </div>
+              </div>  
+
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="preco_servico">Preço do serviço <h11>*</h11></label>  
+                <div class="col-md-2">
+                <input id="preco_servico" name="preco_servico" placeholder="" class="form-control input-md" required="" type="text" maxlength="11">
+                </div>
+<div class="form-group">
+<label class="col-md-2 control-label" for="Cadastrar"></label>
+<div class="col-md-8">
+  <button id="Cadastrar" name="Cadastrar" class="btn btn-primary" type="Submit">Cadastrar</button>
+</div>
+</div>
+    </section>
+</form>
+  
+    <!-- Footer-->
+        <footer class="footer text-center">
+            <div class="container">
+                <div class="row">
+                    <!-- Footer Location-->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">Localização</h4>
+                        <p class="lead mb-0">
+                            Rua Reverendo Daniel Betts, 8652
+                            Morro Santana - Porto Alegre RS
+                            <br />
+                        </p>
+                    </div>
+                    <!-- Footer Social Icons-->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">Redes Sociais</h4>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
         </footer>
+        <!-- Copyright Section-->
+        <div class="copyright py-4 text-center text-white">
+            <div class="container"><small>Copyright &copy; Diba Barbeiros 2021</small></div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/scripts.js"></script>
+
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+        <script>
+
+            
+window.addEventListener('DOMContentLoaded', event => {
+
+// Navbar shrink function
+var navbarShrink = function () {
+    const navbarCollapsible = document.body.querySelector('#mainNav');
+    if (!navbarCollapsible) {
+        return;
+    }
+    if (window.scrollY === 0) {
+        navbarCollapsible.classList.remove('navbar-shrink')
+    } else {
+        navbarCollapsible.classList.add('navbar-shrink')
+    }
+
+};
+
+// Shrink the navbar 
+navbarShrink();
+
+// Shrink the navbar when page is scrolled
+document.addEventListener('scroll', navbarShrink);
+
+// Activate Bootstrap scrollspy on the main nav element
+const mainNav = document.body.querySelector('#mainNav');
+if (mainNav) {
+    new bootstrap.ScrollSpy(document.body, {
+        target: '#mainNav',
+        offset: 72,
+    });
+};
+
+// Collapse responsive navbar when toggler is visible
+const navbarToggler = document.body.querySelector('.navbar-toggler');
+const responsiveNavItems = [].slice.call(
+    document.querySelectorAll('#navbarResponsive .nav-link')
+);
+responsiveNavItems.map(function (responsiveNavItem) {
+    responsiveNavItem.addEventListener('click', () => {
+        if (window.getComputedStyle(navbarToggler).display !== 'none') {
+            navbarToggler.click();
+        }
+    });
+});
+
+});
+
+        </script>
     </body>
 </html>

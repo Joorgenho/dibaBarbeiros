@@ -28,7 +28,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/barbeiros">Barbeiros</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/sair">Serviços</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/servico">Serviços</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/DibaBarbeiros">Sair</a></li>
                     </ul>
                 </div>
@@ -168,7 +168,7 @@
         @each(barbeiros in barbeiros)
             <div class="tabela">
             <div>ID:            
-            {{ (barbeiros.id -1) }}
+            {{ (barbeiros.id) }}
             </div>
             <div>Nome:    
             {{ barbeiros.nome_barbeiro }}
