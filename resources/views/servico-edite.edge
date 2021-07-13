@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
+        <meta name="description" content="Site em andamento" />
+        <meta name="author" content="Jorge Henrique Silva Saldanha" />
         <title>Diba Barbeiros</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -60,10 +60,10 @@
             
             <!-- Text input-->
             <div class="form-group">
-              <label class="col-md-2 control-label" for="tipo_servico">Tipo de serviço <h11>*</h11></label>  
-              <div class="col-md-8">
-              <input id="tipo_servico" name="tipo_servico" placeholder="" class="form-control input-md" required="" type="text">
-              </div>
+                <label class="col-md-2 control-label" for="tipo_servico">Tipo de serviço <h11>*</h11></label>  
+                <div class="col-md-8">
+                <input id="tipo_servico" name="tipo_servico" placeholder="" class="form-control input-md" required="" type="text">
+                </div>
             </div>
 
             <div class="form-group">
@@ -71,22 +71,21 @@
                 <div class="col-md-8">
                 <input id="nome_servico" name="nome_servico" placeholder="" class="form-control input-md" required="" type="text">
                 </div>
-              </div>  
+            </div>  
 
             <div class="form-group">
                 <label class="col-md-2 control-label" for="preco_servico">Preço do serviço <h11>*</h11></label>  
                 <div class="col-md-2">
                 <input id="preco_servico" name="preco_servico" placeholder="" class="form-control input-md" required="" type="text" maxlength="11">
                 </div>
-<div class="form-group">
-<label class="col-md-2 control-label" for="Cadastrar"></label>
-<div class="col-md-8">
-  <button id="Cadastrar" name="Cadastrar" class="btn btn-primary" type="Submit">Cadastrar</button>
-</div>
-</div>
-    </section>
-</form>
-  
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="Cadastrar"></label>
+                <div class="col-md-8">
+                <button id="Cadastrar" name="Cadastrar" class="btn btn-primary" type="Submit">Cadastrar</button>
+                </div>
+            </div>
+        </section>
+    </form>  
     <!-- Footer-->
         <footer class="footer text-center">
             <div class="container">
@@ -121,54 +120,49 @@
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 
         <script>
+        window.addEventListener('DOMContentLoaded', event => {
 
-            
-window.addEventListener('DOMContentLoaded', event => {
+        // Navbar shrink function
+        var navbarShrink = function () {
+            const navbarCollapsible = document.body.querySelector('#mainNav');
+            if (!navbarCollapsible) {
+                return;
+            }
+            if (window.scrollY === 0) {
+                navbarCollapsible.classList.remove('navbar-shrink')
+            } else {
+                navbarCollapsible.classList.add('navbar-shrink')
+            }
+        };
 
-// Navbar shrink function
-var navbarShrink = function () {
-    const navbarCollapsible = document.body.querySelector('#mainNav');
-    if (!navbarCollapsible) {
-        return;
-    }
-    if (window.scrollY === 0) {
-        navbarCollapsible.classList.remove('navbar-shrink')
-    } else {
-        navbarCollapsible.classList.add('navbar-shrink')
-    }
+        // Shrink the navbar 
+        navbarShrink();
 
-};
+        // Shrink the navbar when page is scrolled
+        document.addEventListener('scroll', navbarShrink);
 
-// Shrink the navbar 
-navbarShrink();
+        // Activate Bootstrap scrollspy on the main nav element
+        const mainNav = document.body.querySelector('#mainNav');
+        if (mainNav) {
+            new bootstrap.ScrollSpy(document.body, {
+                target: '#mainNav',
+                offset: 72,
+            });
+        };
 
-// Shrink the navbar when page is scrolled
-document.addEventListener('scroll', navbarShrink);
-
-// Activate Bootstrap scrollspy on the main nav element
-const mainNav = document.body.querySelector('#mainNav');
-if (mainNav) {
-    new bootstrap.ScrollSpy(document.body, {
-        target: '#mainNav',
-        offset: 72,
-    });
-};
-
-// Collapse responsive navbar when toggler is visible
-const navbarToggler = document.body.querySelector('.navbar-toggler');
-const responsiveNavItems = [].slice.call(
-    document.querySelectorAll('#navbarResponsive .nav-link')
-);
-responsiveNavItems.map(function (responsiveNavItem) {
-    responsiveNavItem.addEventListener('click', () => {
-        if (window.getComputedStyle(navbarToggler).display !== 'none') {
-            navbarToggler.click();
-        }
-    });
-});
-
-});
-
+        // Collapse responsive navbar when toggler is visible
+        const navbarToggler = document.body.querySelector('.navbar-toggler');
+        const responsiveNavItems = [].slice.call(
+            document.querySelectorAll('#navbarResponsive .nav-link')
+        );
+        responsiveNavItems.map(function (responsiveNavItem) {
+            responsiveNavItem.addEventListener('click', () => {
+                if (window.getComputedStyle(navbarToggler).display !== 'none') {
+                    navbarToggler.click();
+                }
+            });
+        });
+        });
         </script>
     </body>
 </html>
