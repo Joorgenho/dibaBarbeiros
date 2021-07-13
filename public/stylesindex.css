@@ -11061,3 +11061,10 @@ html {
 .copyright {
   background-color: #1a252f;
 } 
+
+#mapa {
+        height: 280px;
+        width: 280px;
+        margin-left: auto;
+        margin-top: -150px;
+      }
