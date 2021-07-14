@@ -238,6 +238,7 @@
                         <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
                         <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
                     </div>
+                    <div id="mapa"></div>
                 </div>
             </div>
         </footer>
@@ -245,16 +246,12 @@
         <div class="copyright py-4 text-center text-white">
             <div class="container"><small>Copyright &copy; Diba Barbeiros 2021</small></div>
         </div>
-
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
         <script src="js/scripts.js"></script>
-
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-
         <script>
             
         window.addEventListener('DOMContentLoaded', event => {
-
         // Navbar shrink function
         var navbarShrink = function () {
             const navbarCollapsible = document.body.querySelector('#mainNav');
@@ -397,6 +394,23 @@
         }
         return idade;
         } 
+        </script>
+        <script>
+            function inicializar() {
+                var coordenadas = {lat: -30.044063, lng: -51.126213};
+                var mapa = new google.maps.Map(document.getElementById('mapa'), {
+                zoom: 15,
+                center: coordenadas 
+            });
+                var marker = new google.maps.Marker({
+                position: coordenadas,
+                map: mapa,
+                title: 'Meu marcador'
+            });
+            }
+        </script>
+        <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2uXIs9lv9xePOyVzG-62t7rNiMvyKjOE&callback=inicializar">
         </script>
     </body>
 </html>
