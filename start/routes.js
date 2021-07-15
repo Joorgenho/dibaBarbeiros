@@ -1,12 +1,14 @@
 'use strict'
 const Route = use('Route')
+const servicoController = require('../app/Controllers/Http/servicoController')
 
 Route.get("/dibaBarbeiros", 'LoginController.index')
 
-
+Route.resource("/api/servico", 'servicoController').apiOnly();
 Route.get("/login", 'LoginController.login')
 Route.get('/cadastro', 'LoginController.cadastro')
 Route.post('/cadastro', 'LoginController.adicionaUsuario')
+Route.get('/servico_tabela', 'LoginController.servico_tabela')
 Route.post('/auth', 'LoginController.autenticar')
 Route.get('/admin', 'LoginController.admin')
 Route.get('/logout','LoginController.logout')

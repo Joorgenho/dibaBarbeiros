@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Site em andamento" />
+        <meta name="author" content="Jorge Henrique Silva Saldanha" />
+        <title>Diba Barbeiros</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="../css/styleindex.css" rel="stylesheet" type="text/css">
+        <link href="../css//stylecadastro.css" rel="stylesheet" type="text/css">
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="/dibaBarbeiros">Diba Barbeiros</a>
+                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/dibaBarbeiros">Serviços</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/dibaBarbeiros">Sobre nós</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/dibaBarbeiros">Contatos</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/login">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <header class="masthead bg-primary text-white text-center">
+            <div class="container d-flex align-items-center flex-column">
+                <!-- Masthead Avatar Image-->
+                <img class="masthead-avatar mb-5" src="../images/diba.jpg" alt="Diba Barbeiros" />
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Masthead Subheading-->
+                <p class="masthead-subheading font-weight-light mb-0">Cortes- Barba - Sobrancelhas</p>
+            </div>
+        </header>
+        <section class="page-section bg-primary text-white mb-0" id="about">
+        <form class="form-horizontal" action="/cadastro" method="POST">
+            {{ csrfField() }}
+            <fieldset>
+            <div class="panel panel-primary">
+                <div class="panel-heading">Cadastro de Cliente</div>
+                <div class="panel-body">
+            <div class="form-group">
+            <div class="col-md-11 control-label">
+                    <p class="help-block"><h11>*</h11> Campo Obrigatório </p>
+            </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="Nome">Nome <h11>*</h11></label>  
+                <div class="col-md-8">
+                    <input  id="nome" name="nome" placeholder="Digite seu nome completo" class="form-control input-md" required="" type="text">
+                </div>
+            </div>
+            
+            <!-- Text input-->
+            <div class="form-group">
+            <label class="col-md-2 control-label" for="prependedtext">Email <h11>*</h11></label>
+            <div class="col-md-5">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                    <input id=".email" name="email" class="form-control" placeholder="email@email.com" required="" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" >
+                </div>
+            </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="Nome">Senha <h11>*</h11></label>  
+                <div class="col-md-2">
+                <input type="password" id=".senha" name="senha" placeholder="Digite sua senha" class="form-control input-md" required="" type="text" maxlength="11" pattern="[0-9]+$">
+            </div>            
+            </div>
+            
+            <!-- Button (Double) -->
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="Cadastrar"></label>
+            <div class="col-md-8">
+                <button id="Cadastrar" name="Cadastrar" class="btn btn-success" type="Submit">Cadastrar</button>
+                <button id="Cancelar" name="Cancelar" class="btn btn-danger" type="Reset"> <a href="/login">Cancelar</button></a>
+            </div>
+        </div>
+    </div>
+</div>        
+</fieldset>
+</form>
+        </section>
+        <footer class="footer text-center">
+            <div class="container">
+                <div class="row">
+                    <!-- Footer Location-->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">Localização</h4>
+                        <p class="lead mb-0">
+                            Rua Reverendo Daniel Betts, 8652
+                            Morro Santana - Porto Alegre RS
+                            <br />
+                        </p>
+                    </div>
+                    <!-- Footer Social Icons-->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">Redes Sociais</h4>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
+                    </div>
+                    <div id="mapa"></div>
+                </div>
+            </div>
+        </footer>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <!------ Include the above in your HEAD tag ---------->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <script src="../js/script.js"></script>
+        <script src="../js/googlemaps.js"></script>
+    </body>
+</html>

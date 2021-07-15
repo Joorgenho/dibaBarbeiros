@@ -4,9 +4,10 @@ const Barbeiros = use('App/Models/Barbeiros')
 const Servico   = use('App/Models/Servico')
 
 class LoginController {
+   
     async index ( {view}  ) { 
         return view.render("index")
-    } 
+    }
     
     async login ( {view}  ) { 
         return view.render("login")

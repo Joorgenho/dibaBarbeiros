@@ -3,18 +3,18 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
+        <meta name="description" content="Site em andamento" />
+        <meta name="author" content="Jorge Henrique Silva Saldanha" />
         <title>Diba Barbeiros</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        {{ style('stylesindex')}}
+        <link href="../css/styleindex.css" rel = "stylesheet" type = "text/css">
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -68,7 +68,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/cabin.png" alt="..." />
+                            <img class="img-fluid" src="../images/img/portfolio/cabin.png" alt="..." />
                         </div>
                     </div>
                     
@@ -78,7 +78,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/circus.png" alt="..." />
+                            <img class="img-fluid" src="../images/img/portfolio/circus.png" alt="..." />
                         </div>
                     </div>
                     
@@ -88,7 +88,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/safe.png" alt="..." />
+                            <img class="img-fluid" src="../images/img/portfolio/safe.png" alt="..." />
                         </div>
                     </div>
                 </div>
@@ -220,7 +220,7 @@
                                         <div class="divider-custom-line"></div>
                                     </div>
                                     <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/cabin.png" alt="corte da cabelo" />
+                                    <img class="img-fluid rounded mb-5" src="../images/img/portfolio/cabin.png" alt="corte da cabelo" />
                                     <!-- Portfolio Modal - Text-->
                                     <p class="mb-4">Aqui fazemos os mais diversos tipos de cortes, desde o social até o famoso na degradê!</p>
                                     <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
@@ -252,7 +252,7 @@
                                         <div class="divider-custom-line"></div>
                                     </div>
                                     <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/circus.png" alt="sobrancelhas" />
+                                    <img class="img-fluid rounded mb-5" src="../images/img/portfolio/circus.png" alt="sobrancelhas" />
                                     <!-- Portfolio Modal - Text-->
                                     <p class="mb-4">Cuidamos da sua sobrancelhas, para que elas fiquem alinhadas com seu estilo de corte de cabelo e rosto.</p>
                                     <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
@@ -284,7 +284,7 @@
                                         <div class="divider-custom-line"></div>
                                     </div>
                                     <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/safe.png" alt="..." />
+                                    <img class="img-fluid rounded mb-5" src="../images/img/portfolio/safe.png" alt="..." />
                                     <!-- Portfolio Modal - Text-->
                                     <p class="mb-4">Fazemos diversos tipos de cortes e também tratamentos para que a sua barba cresça mais rápido.</p>
                                     <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
@@ -299,24 +299,8 @@
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="js/scripts.js"></script>
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-        <script>
-            function inicializar() {
-                var coordenadas = {lat: -30.044063, lng: -51.126213};
-                var mapa = new google.maps.Map(document.getElementById('mapa'), {
-                zoom: 15,
-                center: coordenadas 
-            });
-                var marker = new google.maps.Marker({
-                position: coordenadas,
-                map: mapa,
-                title: 'Meu marcador'
-            });
-            }
-        </script>
-        <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2uXIs9lv9xePOyVzG-62t7rNiMvyKjOE&callback=inicializar">
-        </script>
+        <script src="../js/script.js"></script>
+        <script src="../js/googlemaps.js"></script>
     </body>
 </html> 
